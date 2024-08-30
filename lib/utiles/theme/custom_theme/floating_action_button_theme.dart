@@ -1,3 +1,4 @@
+import 'package:android_version/utiles/constant/colors.dart';
 import 'package:flutter/material.dart';
 
 class AFloatingActionButtonTheme {
@@ -5,9 +6,9 @@ class AFloatingActionButtonTheme {
 
   static FloatingActionButtonThemeData fAButtonTheme =
       FloatingActionButtonThemeData(
-    backgroundColor: Colors.teal[400],
-    foregroundColor: Colors.white,
     elevation: 6,
+    backgroundColor: AppColors.primaryColor,
+    foregroundColor: Colors.white,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
   );
 }

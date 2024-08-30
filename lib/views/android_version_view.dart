@@ -1,4 +1,5 @@
 import 'package:android_version/utiles/constant/colors.dart';
+import 'package:android_version/utiles/constant/sizes.dart';
 import 'package:flutter/material.dart';
 import '../models/android_version.dart';
 
@@ -18,7 +19,7 @@ class AndroidVersionView extends StatelessWidget {
       backgroundColor: AppColors.primaryBackground,
       title: Text('Android Version $versionNumber'),
       content: Wrap(
-        spacing: 8.0,
+        spacing: ASizes.spaceBtwChip,
         children: versions
             .map((version) =>
                 Chip(label: Text('${version.id}: ${version.title}')))
@@ -27,11 +28,12 @@ class AndroidVersionView extends StatelessWidget {
       actions: [
         OutlinedButton(
           onPressed: () => Navigator.of(context).pop(),
-          child: Text(
+          child: const Text(
             'Close',
             style: TextStyle(
-              color: Colors.red[600],
-              fontWeight: FontWeight.w700,
+              color: Colors.redAccent,
+              fontWeight: FontWeight.w800,
+              letterSpacing: 1,
             ),
           ),
         ),

@@ -1,3 +1,4 @@
+import 'package:android_version/utiles/constant/sizes.dart';
 import 'package:flutter/material.dart';
 import '../controllers/android_version_controller.dart';
 import 'android_version_view.dart';
@@ -44,7 +45,7 @@ class HomeScreen extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
             ),
-            const SizedBox(width: 16),
+            const SizedBox(width: ASizes.spaceBtwItems),
             FloatingActionButton.extended(
               onPressed: () {
                 final versions =
