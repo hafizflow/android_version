@@ -39,16 +39,20 @@ class AndroidVersionController {
 
     for (var element in jsonInput) {
       if (element is Map) {
-        element.forEach((key, value) {
-          if (value is Map) {
-            androidVersions
-                .add(AndroidVersion(id: value['id'], title: value['title']));
-          }
-        });
+        element.forEach(
+          (key, value) {
+            if (value is Map) {
+              androidVersions.add(
+                AndroidVersion(id: value['id'], title: value['title']),
+              );
+            }
+          },
+        );
       } else if (element is List) {
         for (var item in element) {
-          androidVersions
-              .add(AndroidVersion(id: item['id'], title: item['title']));
+          androidVersions.add(
+            AndroidVersion(id: item['id'], title: item['title']),
+          );
         }
       }
     }

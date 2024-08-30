@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../controllers/android_version_controller.dart';
-import 'android_version_screen.dart';
+import 'android_version_view.dart';
 
 class HomeScreen extends StatelessWidget {
   final AndroidVersionController _controller = AndroidVersionController();
@@ -10,35 +10,40 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Android Versions'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
+      appBar: AppBar(title: const Text('Android Versions')),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(right: 16, bottom: 16),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            ElevatedButton(
+            FloatingActionButton.extended(
               onPressed: () {
                 final versions =
                     _controller.parseJson(AndroidVersionController.input1);
                 showDialog(
                   context: context,
-                  builder: (context) => AndroidVersionView(versions: versions),
+                  builder: (context) => AndroidVersionView(
+                    versions: versions,
+                    versionNumber: '1',
+                  ),
                 );
               },
-              child: const Text('Show Input 1 Versions'),
+              label: const Text('Input Version 1'),
             ),
-            const SizedBox(height: 20),
-            ElevatedButton(
+            const SizedBox(width: 16),
+            FloatingActionButton.extended(
               onPressed: () {
                 final versions =
                     _controller.parseJson(AndroidVersionController.input2);
                 showDialog(
                   context: context,
-                  builder: (context) => AndroidVersionView(versions: versions),
+                  builder: (context) => AndroidVersionView(
+                    versions: versions,
+                    versionNumber: '2',
+                  ),
                 );
               },
-              child: const Text('Show Input 2 Versions'),
+              label: const Text('Input Version 2'),
             ),
           ],
         ),
