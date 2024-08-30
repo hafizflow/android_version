@@ -10,9 +10,20 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Android Versions')),
+      appBar: AppBar(
+        title: const Text(
+          'Android Versions',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(right: 16, bottom: 16),
+        padding: EdgeInsets.only(
+          right: MediaQuery.sizeOf(context).width * .1,
+          bottom: MediaQuery.sizeOf(context).height * .02,
+        ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -28,7 +39,10 @@ class HomeScreen extends StatelessWidget {
                   ),
                 );
               },
-              label: const Text('Input Version 1'),
+              label: const Text(
+                'Input Version 1',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
             const SizedBox(width: 16),
             FloatingActionButton.extended(
@@ -43,7 +57,10 @@ class HomeScreen extends StatelessWidget {
                   ),
                 );
               },
-              label: const Text('Input Version 2'),
+              label: const Text(
+                'Input Version 2',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
           ],
         ),

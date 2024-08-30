@@ -1,3 +1,4 @@
+import 'package:android_version/utiles/theme/theme.dart';
 import 'package:android_version/views/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -9,9 +10,7 @@ class AndroidVersionApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Android Version App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: AndroidVersionAppTheme.myTheme,
       home: HomeScreen(),
     );
   }

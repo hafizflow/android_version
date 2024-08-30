@@ -1,3 +1,4 @@
+import 'package:android_version/utiles/constant/colors.dart';
 import 'package:flutter/material.dart';
 import '../models/android_version.dart';
 
@@ -14,6 +15,7 @@ class AndroidVersionView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      backgroundColor: AppColors.primaryBackground,
       title: Text('Android Version $versionNumber'),
       content: Wrap(
         spacing: 8.0,
